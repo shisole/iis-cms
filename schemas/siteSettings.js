@@ -49,10 +49,79 @@ export default defineType({
       type: 'url'
     }),
     defineField({
-      name: 'heroImage',
-      title: 'Hero Image',
+      name: 'heroImages',
+      title: 'Hero Images',
+      type: 'array',
+      of: [{ type: 'image', options: { hotspot: true } }]
+    }),
+    defineField({
+      name: 'missionText',
+      title: 'Mission Statement',
+      type: 'text',
+      rows: 4
+    }),
+    defineField({
+      name: 'missionImage',
+      title: 'Mission Image',
       type: 'image',
       options: { hotspot: true }
+    }),
+    defineField({
+      name: 'visionText',
+      title: 'Vision Statement',
+      type: 'text',
+      rows: 4
+    }),
+    defineField({
+      name: 'visionImage',
+      title: 'Vision Image',
+      type: 'image',
+      options: { hotspot: true }
+    }),
+    defineField({
+      name: 'milestones',
+      title: 'Story Milestones',
+      description: 'Timeline milestones shown in the "Our Story" section.',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'year',
+              title: 'Year',
+              type: 'string',
+              validation: (rule) => rule.required()
+            }),
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (rule) => rule.required()
+            }),
+            defineField({
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+              rows: 3,
+              validation: (rule) => rule.required()
+            }),
+            defineField({
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: { hotspot: true }
+            })
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              subtitle: 'year',
+              media: 'image'
+            }
+          }
+        }
+      ]
     }),
     defineField({
       name: 'schoolStory',
