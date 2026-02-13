@@ -9,7 +9,9 @@
     "deploy": "sanity deploy"
   },
   "dependencies": {
+    "@sanity/ui": "^3.1.11",
     "@sanity/vision": "^3.42.0",
+    "browser-image-compression": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanity": "^3.42.0",

@@ -47,6 +47,12 @@ export default defineType({
       title: 'Featured Event',
       type: 'boolean',
       initialValue: false
+    }),
+    defineField({
+      name: 'keepslyEventId',
+      title: 'Keepsly Event ID',
+      type: 'string',
+      description: 'Link this event to a Keepsly photo gallery by entering the Keepsly event ID'
     })
   ],
   orderings: [
