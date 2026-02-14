@@ -5,5 +5,6 @@ import leader from './leader';
 import category from './category';
 import admissions from './admissions';
 import faq from './faq';
+import facebookPost from './facebookPost';
 
-export const schemaTypes = [siteSettings, blogPost, event, leader, category, admissions, faq];
+export const schemaTypes = [siteSettings, blogPost, event, leader, category, admissions, faq, facebookPost];
