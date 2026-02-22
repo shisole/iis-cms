@@ -138,6 +138,161 @@ export default defineType({
           ]
         }
       ]
+    }),
+    defineField({
+      name: 'coreValues',
+      title: 'Core Values',
+      description: 'Values shown in the "Our Heart" section.',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (rule) => rule.required()
+            }),
+            defineField({
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+              rows: 2,
+              validation: (rule) => rule.required()
+            })
+          ],
+          preview: {
+            select: { title: 'title', subtitle: 'description' }
+          }
+        }
+      ]
+    }),
+    defineField({
+      name: 'founderTribute',
+      title: 'Founder Tribute',
+      description: 'Tribute block shown in the "Our Heart" section.',
+      type: 'object',
+      fields: [
+        defineField({ name: 'name', title: 'Name', type: 'string' }),
+        defineField({ name: 'role', title: 'Role', type: 'string' }),
+        defineField({
+          name: 'photo',
+          title: 'Photo',
+          type: 'image',
+          options: { hotspot: true }
+        }),
+        defineField({ name: 'quote', title: 'Quote', type: 'text', rows: 3 }),
+        defineField({ name: 'description', title: 'Description', type: 'text', rows: 3 })
+      ]
+    }),
+    defineField({
+      name: 'anniversaryTagline',
+      title: 'Anniversary Tagline',
+      description: 'Tagline shown at the bottom of the "Our Heart" section.',
+      type: 'string'
+    }),
+    defineField({
+      name: 'whyChooseUs',
+      title: 'Why Choose Us',
+      description: 'Value propositions shown in the "Why Choose IIS?" section.',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              validation: (rule) => rule.required()
+            }),
+            defineField({
+              name: 'description',
+              title: 'Description',
+              type: 'text',
+              rows: 2,
+              validation: (rule) => rule.required()
+            })
+          ],
+          preview: {
+            select: { title: 'title', subtitle: 'description' }
+          }
+        }
+      ]
+    }),
+    defineField({
+      name: 'schoolStats',
+      title: 'School Stats',
+      description: 'Numbers shown in the "By the Numbers" section (e.g. "25+", "500+").',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'value',
+              title: 'Value',
+              description: 'e.g. "25+", "500+", "DepEd"',
+              type: 'string',
+              validation: (rule) => rule.required()
+            }),
+            defineField({
+              name: 'label',
+              title: 'Label',
+              description: 'e.g. "Years of Excellence", "Graduates"',
+              type: 'string',
+              validation: (rule) => rule.required()
+            })
+          ],
+          preview: {
+            select: { title: 'value', subtitle: 'label' }
+          }
+        }
+      ]
+    }),
+    defineField({
+      name: 'testimonials',
+      title: 'Testimonials',
+      description: 'Parent testimonials shown in the "What Parents Say" section.',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'quote',
+              title: 'Quote',
+              type: 'text',
+              rows: 3,
+              validation: (rule) => rule.required()
+            }),
+            defineField({
+              name: 'name',
+              title: 'Name',
+              type: 'string',
+              validation: (rule) => rule.required()
+            }),
+            defineField({
+              name: 'role',
+              title: 'Role',
+              description: 'e.g. "Parent of Grade 3 student"',
+              type: 'string',
+              validation: (rule) => rule.required()
+            })
+          ],
+          preview: {
+            select: { title: 'name', subtitle: 'quote' }
+          }
+        }
+      ]
+    }),
+    defineField({
+      name: 'ogImage',
+      title: 'Social Share Image (OG Image)',
+      description: 'Image shown when the website is shared on Facebook, Twitter, etc. Recommended size: 1200x630.',
+      type: 'image',
+      options: { hotspot: true }
     })
   ]
 });
