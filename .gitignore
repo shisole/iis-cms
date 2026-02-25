@@ -1,7 +1,22 @@
+# Dependencies
 node_modules/
+
+# Sanity
+.sanity
+dist
 /package
+
+# Environment variables
 .env
 .env.*
 !.env.example
-dist
-.sanity
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
