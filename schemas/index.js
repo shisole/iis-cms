@@ -6,5 +6,7 @@ import category from './category';
 import admissions from './admissions';
 import faq from './faq';
 import facebookPost from './facebookPost';
+import alumniOfficer from './alumniOfficer';
+import alumniSpotlight from './alumniSpotlight';
 
-export const schemaTypes = [siteSettings, blogPost, event, leader, category, admissions, faq, facebookPost];
+export const schemaTypes = [siteSettings, blogPost, event, leader, category, admissions, faq, facebookPost, alumniOfficer, alumniSpotlight];
